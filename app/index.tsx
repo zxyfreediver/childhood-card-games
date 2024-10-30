@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import SimpleGame from './SimpleGame';
+import AnimalChess from './AnimalChess';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <SimpleGame />
+      <AnimalChess />
     </View>
   );
 }
