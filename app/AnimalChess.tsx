@@ -264,17 +264,9 @@ class AnimalChess extends PureComponent {
     
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.turnText}>
-            {`玩家 ${currentPlayer} 回合`}
-          </Text>
-          <Button 
-            title="重新开始" 
-            onPress={this.resetGame}
-            style={styles.resetButton}
-          />
-        </View>
-
+        <Text style={[styles.turnText]}>
+          {`玩家 ${currentPlayer} 回合`}
+        </Text>
         <View style={styles.board}>
           {this.state.board.map((row, rowIndex) => (
             <View key={rowIndex} style={styles.row}>
@@ -314,6 +306,11 @@ class AnimalChess extends PureComponent {
             <View style={[styles.colorIndicator, { backgroundColor: this.state.player1Color }]} />
             <Text style={styles.playerText}>玩家 1</Text>
           </View>
+          <Button 
+            title="重新开始" 
+            onPress={this.resetGame}
+            style={styles.resetButton}
+          />
           <View style={styles.playerInfo}>
             <View style={[styles.colorIndicator, { backgroundColor: this.state.player2Color }]} />
             <Text style={styles.playerText}>玩家 2</Text>
@@ -332,13 +329,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingVertical: 20
   },
-  header: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 20,
-    marginBottom: 20
+  turnText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginTop: 40,
   },
   board: {
     width: WIDTH,
@@ -347,7 +341,8 @@ const styles = StyleSheet.create({
   },
   footer: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    alignItems: "center",
     width: "100%",
     paddingHorizontal: 20,
     marginTop: 20
@@ -370,10 +365,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold"
   },
-  turnText: {
-    fontSize: 20,
-    fontWeight: "bold"
-  },
   button: {
     backgroundColor: "#007AFF",
     paddingHorizontal: 20,
@@ -386,7 +377,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   resetButton: {
-    backgroundColor: "#FF3B30"
+    backgroundColor: "#FF3B30",
+    paddingHorizontal: 30,
+    paddingVertical: 12
   },
   playerInfo: {
     flexDirection: "row",
