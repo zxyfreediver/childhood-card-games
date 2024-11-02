@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "动物棋",
-    "slug": "animal-chess",
+    "name": "龙虎斗",
+    "slug": "dragon-tiger-fight",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

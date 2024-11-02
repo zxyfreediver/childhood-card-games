@@ -12,34 +12,30 @@ import {
 const { width: WIDTH } = Dimensions.get("window");
 const CELL_SIZE = WIDTH / 4;
 
-// 修改动物定义，添加更多信息
-const ANIMALS = {
-  ELEPHANT: { id: 1, name: "象", power: 8, canBeEatenBy: [8] }, // 只能被老鼠吃
-  LION: { id: 2, name: "狮", power: 7, canBeEatenBy: [1] },     // 能被大象吃
-  TIGER: { id: 3, name: "虎", power: 6, canBeEatenBy: [1, 2] }, // 能被大象和狮子吃
-  LEOPARD: { id: 4, name: "豹", power: 5, canBeEatenBy: [1, 2, 3] },
-  WOLF: { id: 5, name: "狼", power: 4, canBeEatenBy: [1, 2, 3, 4] },
-  DOG: { id: 6, name: "狗", power: 3, canBeEatenBy: [1, 2, 3, 4, 5] },
-  CAT: { id: 7, name: "猫", power: 2, canBeEatenBy: [1, 2, 3, 4, 5, 6] },
-  MOUSE: { id: 8, name: "鼠", power: 1, canBeEatenBy: [2, 3, 4, 5, 6, 7] } // 老鼠不能被大象吃
-};
+// 龙队中依次是龙王神龙金龙青龙赤龙白龙风雨龙变形龙
+// 虎队中依次是虎王东北虎大头虎下山虎绿虎妖虎白虎小王虎
 
-// 棋子组件
-const ChessPiece = ({ animal, isRevealed, color, onPress }) => {
-  return (
-    <TouchableOpacity 
-      style={[
-        styles.cell, 
-        isRevealed && { backgroundColor: color }
-      ]} 
-      onPress={onPress}
-    >
-      {isRevealed && (
-        <Text style={styles.cellText}>{animal.name}</Text>
-      )}
-    </TouchableOpacity>
-  );
-};
+const DRAGONS = {
+    1: { id: 1, name: "龙王", power: 8, canBeEatenBy: [8] },
+    2: { id: 2, name: "神龙", power: 7, canBeEatenBy: [1] },
+    3: { id: 3, name: "金龙", power: 6, canBeEatenBy: [1, 2] },
+    4: { id: 4, name: "青龙", power: 5, canBeEatenBy: [1, 2, 3] },
+    5: { id: 5, name: "赤龙", power: 4, canBeEatenBy: [1, 2, 3, 4] },
+    6: { id: 6, name: "白龙", power: 3, canBeEatenBy: [1, 2, 3, 4, 5] },
+    7: { id: 7, name: "风雨龙", power: 2, canBeEatenBy: [1, 2, 3, 4, 5, 6] },
+    8: { id: 8, name: "变形龙", power: 1, canBeEatenBy: [2, 3, 4, 5, 6, 7] }
+}
+
+const TIGERS = {
+    1: { id: 1, name: "虎王", power: 8, canBeEatenBy: [8] },
+    2: { id: 2, name: "东北虎", power: 7, canBeEatenBy: [1] },
+    3: { id: 3, name: "大头虎", power: 6, canBeEatenBy: [1, 2] },
+    4: { id: 4, name: "下山虎", power: 5, canBeEatenBy: [1, 2, 3] },
+    5: { id: 5, name: "绿虎", power: 4, canBeEatenBy: [1, 2, 3, 4] },
+    6: { id: 6, name: "妖虎", power: 3, canBeEatenBy: [1, 2, 3, 4, 5] },
+    7: { id: 7, name: "白虎", power: 2, canBeEatenBy: [1, 2, 3, 4, 5, 6] },
+    8: { id: 8, name: "小王虎", power: 1, canBeEatenBy: [2, 3, 4, 5, 6, 7] }
+}
 
 // 添加一个按钮组件
 const Button = ({ onPress, title, style }) => (
@@ -97,8 +93,8 @@ class AnimalChess extends PureComponent {
 
   initializeBoard() {
     // 创建包含所有动物的数组,并标记颜色
-    const redAnimals = Object.values(ANIMALS).map(animal => ({...animal, color: 'red'}));
-    const blueAnimals = Object.values(ANIMALS).map(animal => ({...animal, color: 'blue'}));
+    const redAnimals = Object.values(TIGERS).map(animal => ({...animal, color: 'red'}));
+    const blueAnimals = Object.values(DRAGONS).map(animal => ({...animal, color: 'blue'}));
     const animals = [...redAnimals, ...blueAnimals];
     // 随机打乱数组
     const shuffled = animals.sort(() => Math.random() - 0.5);
@@ -290,7 +286,7 @@ class AnimalChess extends PureComponent {
                       <View style={styles.cardContent}>
                         <Text style={styles.cellText}>{cell.animal.name}</Text>
                         <Text style={styles.ownerText}>
-                          {`玩家${cell.owner}`}
+                          {cell.animal.id}
                         </Text>
                       </View>
                     )
