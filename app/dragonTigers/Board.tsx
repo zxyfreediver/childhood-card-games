@@ -30,10 +30,15 @@ export const Board = ({ board, selectedPiece, onCellPress }: BoardProps) => (
 const styles = StyleSheet.create({
   board: {
     width: WIDTH,
-    height: WIDTH,
-    backgroundColor: "#eee"
+    height: WIDTH * 1.3,
+    backgroundColor: "#eee",
+    alignSelf: 'center',
+    borderRadius: 12,
+    padding: 10,
+    marginVertical: 20,
   },
   row: {
-    flexDirection: "row"
+    flexDirection: "row",
+    justifyContent: 'center',
   }
 });

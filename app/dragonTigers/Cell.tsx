@@ -34,8 +34,8 @@ export const Cell = ({ cell, isSelected, onPress }: CellProps) => (
 
 const styles = StyleSheet.create({
   cell: {
-    width: CELL_SIZE,
-    height: CELL_SIZE * 1.4,
+    width: CELL_SIZE - 8,
+    height: (CELL_SIZE - 8) * 1.4,
     borderWidth: 1,
     borderColor: "#999",
     borderRadius: 8,
@@ -65,13 +65,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10
   },
   cellText: {
-    fontSize: 28,
+    fontSize: CELL_SIZE * 0.2,
     color: "#fff",
     fontWeight: "bold"
   },
   powerText: {
-    fontSize: 14,
+    fontSize: CELL_SIZE * 0.15,
     color: "#fff",
-    marginTop: 8,
+    marginTop: 4,
   }
 });
