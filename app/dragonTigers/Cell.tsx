@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, Animated } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, Animated, Image } from 'react-native';
 import { Cell as CellType } from './types';
 import { CELL_SIZE } from './gameConfig';
 import { CardBack } from './CardBack';
@@ -116,10 +116,19 @@ export const Cell = ({ cell, isSelected, onPress }: CellProps) => {
           ]}
         >
           {cell.animal && (
-            <View style={styles.cardContent}>
-              <Text style={styles.cellText}>{cell.animal.name}</Text>
-              <Text style={styles.powerText}>{cell.animal.id}</Text>
-            </View>
+            <>
+              <Image 
+                source={cell.animal.type === "dragon" 
+                  ? require('@/assets/images/dragons/dragon-border.png')  // 替换为实际的龙边框图片路径
+                  : require('@/assets/images/tigers/tiger-border.png')   // 替换为实际的虎边框图片路径
+                }
+                style={styles.borderImage}
+              />
+              <View style={styles.cardContent}>
+                <Text style={styles.cellText}>{cell.animal.name}</Text>
+                <Text style={styles.powerText}>{cell.animal.id}</Text>
+              </View>
+            </>
           )}
         </Animated.View>
       </TouchableOpacity>
@@ -149,7 +158,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingVertical: 10
+    paddingVertical: 10,
+    zIndex: 1  // 确保内容显示在边框图片上方
   },
   cellText: {
     fontSize: CELL_SIZE * 0.2,
@@ -173,5 +183,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fff",
     boxShadow: '0px 2px 3.84px rgba(0, 0, 0, 0.25)'
+  },
+  borderImage: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover'
   }
 });

@@ -4,6 +4,7 @@ export type Animal = {
     power: number;
     canBeEatenBy: number[];
     color?: string;
+    type: 'dragon' | 'tiger';
   };
   
   export type Cell = {
