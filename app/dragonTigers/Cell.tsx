@@ -191,6 +191,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 10,
     paddingTop: 10,
+    zIndex: 2,
   },
   idText: {
     fontSize: CELL_SIZE * 0.15,
@@ -211,9 +212,15 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   avatar: {
-    marginTop: -15,
-    width: CELL_SIZE * 0.8,
-    height: CELL_SIZE * 0.8,
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: [
+      { translateX: -CELL_SIZE * 0.5 },
+      { translateY: -CELL_SIZE * 0.5 }
+    ],
+    width: CELL_SIZE,
+    height: CELL_SIZE,
     resizeMode: 'contain',
     zIndex: 1,
   }
