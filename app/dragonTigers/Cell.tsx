@@ -101,7 +101,7 @@ export const Cell = ({ cell, isSelected, onPress }: CellProps) => {
   return (
     <Animated.View style={[styles.container, containerStyle]}>
       <TouchableOpacity
-        style={[styles.cell, isSelected && styles.selectedCell]}
+        style={[styles.cell]}
         onPress={onPress}
       >
         <Animated.View style={[styles.cardSide, backAnimatedStyle]}>
@@ -149,10 +149,6 @@ const styles = StyleSheet.create({
     margin: 4,
     borderRadius: 8,
     overflow: 'hidden',
-  },
-  selectedCell: {
-    borderColor: '#4CAF50',
-    borderWidth: 2,
   },
   cardContent: {
     flex: 1,
