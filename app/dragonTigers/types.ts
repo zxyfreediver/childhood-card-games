@@ -1,3 +1,5 @@
+import { ImageSourcePropType } from "react-native";
+
 export type Animal = {
     id: number;
     name: string;
@@ -5,6 +7,7 @@ export type Animal = {
     canBeEatenBy: number[];
     color?: string;
     type: 'dragon' | 'tiger';
+    avatar: ImageSourcePropType;
   };
   
   export type Cell = {

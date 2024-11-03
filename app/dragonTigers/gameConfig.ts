@@ -9,7 +9,7 @@ export const WIDTH = Math.min(screenWidth, screenHeight) * 0.85;
 export const CELL_SIZE = (WIDTH - 40) / 4; // 40是总的边距空间
 
 export const DRAGONS = {
-  1: { id: 1, name: "龙王", power: 8, canBeEatenBy: [8], type: 'dragon' },
+  1: { id: 1, name: "龙王", power: 8, canBeEatenBy: [8], type: 'dragon', avatar: require('@/assets/images/dragons/dragon1.png') },
   2: { id: 2, name: "神龙", power: 7, canBeEatenBy: [1], type: 'dragon' },
   3: { id: 3, name: "金龙", power: 6, canBeEatenBy: [1, 2], type: 'dragon' },
   4: { id: 4, name: "青龙", power: 5, canBeEatenBy: [1, 2, 3], type: 'dragon' },

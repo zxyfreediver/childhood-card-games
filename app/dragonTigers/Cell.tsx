@@ -125,8 +125,18 @@ export const Cell = ({ cell, isSelected, onPress }: CellProps) => {
                 style={styles.borderImage}
               />
               <View style={styles.cardContent}>
-                <Text style={styles.cellText}>{cell.animal.name}</Text>
-                <Text style={styles.powerText}>{cell.animal.id}</Text>
+                <View style={styles.topRow}>
+                  <Text style={styles.idText}>{cell.animal.id}</Text>
+                  <Text style={styles.nameText}>{cell.animal.name}</Text>
+                </View>
+                <Image 
+                  source={cell.animal.avatar} 
+                  style={[styles.avatar, {
+                    width: CELL_SIZE,
+                    height: CELL_SIZE,
+                    resizeMode: 'contain'
+                  }]} 
+                />
               </View>
             </>
           )}
@@ -150,40 +160,61 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     overflow: 'hidden',
   },
-  cardContent: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    paddingVertical: 10,
-    zIndex: 1  // 确保内容显示在边框图片上方
-  },
-  cellText: {
-    fontSize: CELL_SIZE * 0.2,
-    color: "#fff",
-    fontWeight: "bold"
-  },
-  powerText: {
-    fontSize: CELL_SIZE * 0.15,
-    color: "#fff",
-    marginTop: 4,
-  },
   cardSide: {
     width: CELL_SIZE - 8,
     height: (CELL_SIZE - 8) * 1.4,
     position: 'absolute',
     backfaceVisibility: 'hidden',
-    borderWidth: 1,
-    borderColor: "#999",
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#fff",
-    boxShadow: '0px 2px 3.84px rgba(0, 0, 0, 0.25)'
+    overflow: 'hidden',
   },
   borderImage: {
     position: 'absolute',
     width: '100%',
     height: '100%',
-    resizeMode: 'cover'
+    resizeMode: 'cover',
+  },
+  cardContent: {
+    flex: 1,
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    zIndex: 1,
+  },
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    paddingHorizontal: 10,
+    paddingTop: 10,
+  },
+  idText: {
+    fontSize: CELL_SIZE * 0.15,
+    color: '#fff',
+    fontWeight: 'bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+    zIndex: 2,
+  },
+  nameText: {
+    fontSize: CELL_SIZE * 0.18,
+    color: '#fff',
+    fontWeight: 'bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+    zIndex: 2,
+  },
+  avatar: {
+    marginTop: -15,
+    width: CELL_SIZE * 0.8,
+    height: CELL_SIZE * 0.8,
+    resizeMode: 'contain',
+    zIndex: 1,
   }
 });
