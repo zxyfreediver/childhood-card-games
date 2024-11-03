@@ -22,6 +22,13 @@ export const Cell = ({ cell, isSelected, onPress }: CellProps) => {
         tension: 10,
         useNativeDriver: true,
       }).start();
+    } else {
+      Animated.spring(flipAnim, {
+        toValue: 0,
+        friction: 8,
+        tension: 10,
+        useNativeDriver: true,
+      }).start();
     }
   }, [cell.isRevealed]);
 
@@ -165,13 +172,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#fff",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 3
+    boxShadow: '0px 2px 3.84px rgba(0, 0, 0, 0.25)'
   }
 });
