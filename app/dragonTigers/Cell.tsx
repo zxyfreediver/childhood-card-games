@@ -119,8 +119,8 @@ export const Cell = ({ cell, isSelected, onPress }: CellProps) => {
             <>
               <Image 
                 source={cell.animal.type === "dragon" 
-                  ? require('@/assets/images/dragons/dragon-border.png')  // 替换为实际的龙边框图片路径
-                  : require('@/assets/images/tigers/tiger-border.png')   // 替换为实际的虎边框图片路径
+                  ? require('@/assets/images/dragons/dragon-border.jpeg')  // 替换为实际的龙边框图片路径
+                  : require('@/assets/images/tigers/tiger-border.jpeg')   // 替换为实际的虎边框图片路径
                 }
                 style={styles.borderImage}
               />
@@ -131,11 +131,8 @@ export const Cell = ({ cell, isSelected, onPress }: CellProps) => {
                 </View>
                 <Image 
                   source={cell.animal.avatar} 
-                  style={[styles.avatar, {
-                    width: CELL_SIZE,
-                    height: CELL_SIZE,
-                    resizeMode: 'contain'
-                  }]} 
+                  resizeMode="contain"
+                  style={styles.avatar}
                 />
               </View>
             </>
@@ -176,6 +173,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
+    zIndex: 3,
   },
   cardContent: {
     flex: 1,
@@ -213,15 +211,8 @@ const styles = StyleSheet.create({
   },
   avatar: {
     position: 'absolute',
-    left: '50%',
-    top: '50%',
-    transform: [
-      { translateX: -CELL_SIZE * 0.5 },
-      { translateY: -CELL_SIZE * 0.5 }
-    ],
-    width: CELL_SIZE,
-    height: CELL_SIZE,
-    resizeMode: 'contain',
+    width: CELL_SIZE * 1.3,
+    height: CELL_SIZE * 1.3,
     zIndex: 1,
   }
 });
