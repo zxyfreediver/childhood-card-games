@@ -31,11 +31,13 @@ const styles = StyleSheet.create({
   board: {
     width: WIDTH,
     height: WIDTH * 1.3,
-    backgroundColor: "#eee",
     alignSelf: 'center',
     borderRadius: 12,
     padding: 10,
     marginVertical: 20,
+    overflow: 'hidden',
+    position: 'relative',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
   row: {
     flexDirection: "row",

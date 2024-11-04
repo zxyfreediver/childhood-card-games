@@ -9,20 +9,12 @@ type FooterProps = {
 
 export const Footer = ({ player1Color, player2Color, onReset }: FooterProps) => (
   <View style={styles.footer}>
-    <View style={styles.playerInfo}>
-      <View style={[styles.colorIndicator, { backgroundColor: player1Color }]} />
-      <Text style={styles.playerText}>玩家 1</Text>
-    </View>
     <TouchableOpacity 
       style={[styles.button, styles.resetButton]} 
       onPress={onReset}
     >
       <Text style={styles.buttonText}>重新开始</Text>
     </TouchableOpacity>
-    <View style={styles.playerInfo}>
-      <View style={[styles.colorIndicator, { backgroundColor: player2Color }]} />
-      <Text style={styles.playerText}>玩家 2</Text>
-    </View>
   </View>
 );
 
@@ -34,20 +26,6 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 20,
     marginTop: 20
-  },
-  playerInfo: {
-    flexDirection: "row",
-    alignItems: "center"
-  },
-  colorIndicator: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    marginRight: 10
-  },
-  playerText: {
-    fontSize: 16,
-    fontWeight: "bold"
   },
   button: {
     backgroundColor: "#007AFF",
