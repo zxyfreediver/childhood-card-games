@@ -119,8 +119,8 @@ export const Cell = ({ cell, isSelected, onPress }: CellProps) => {
             <>
               <Image 
                 source={cell.animal.type === "dragon" 
-                  ? require('@/assets/images/dragons/dragon-border.jpeg')  // 替换为实际的龙边框图片路径
-                  : require('@/assets/images/tigers/tiger-border.jpeg')   // 替换为实际的虎边框图片路径
+                  ? require('@/assets/images/dragons/dragon-border.png')  // 替换为实际的龙边框图片路径
+                  : require('@/assets/images/tigers/tiger-border.png')   // 替换为实际的虎边框图片路径
                 }
                 style={styles.borderImage}
               />
