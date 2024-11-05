@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingVertical: 20,
-    backgroundColor: 'rgb(39, 39, 39)',  // 棕色背景
+    backgroundColor: 'rgb(233, 233, 233)',  // 棕色背景
   },
   turnText: {
     fontSize: 24,
