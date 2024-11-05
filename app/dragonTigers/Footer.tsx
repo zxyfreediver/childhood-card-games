@@ -10,7 +10,7 @@ type FooterProps = {
 export const Footer = ({ player1Color, player2Color, onReset }: FooterProps) => (
   <View style={styles.footer}>
     <TouchableOpacity 
-      style={[styles.button, styles.resetButton]} 
+      style={styles.resetButton} 
       onPress={onReset}
     >
       <Text style={styles.buttonText}>重新开始</Text>
@@ -20,27 +20,34 @@ export const Footer = ({ player1Color, player2Color, onReset }: FooterProps) => 
 
 const styles = StyleSheet.create({
   footer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
     width: "100%",
-    paddingHorizontal: 20,
-    marginTop: 20
-  },
-  button: {
-    backgroundColor: "#007AFF",
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5
+    alignItems: "center",
+    paddingVertical: 20,
   },
   resetButton: {
-    backgroundColor: "#FF3B30",
-    paddingHorizontal: 30,
-    paddingVertical: 12
+    backgroundColor: "rgba(0, 150, 150, 0.9)",  // 半透明的青色
+    paddingHorizontal: 40,
+    paddingVertical: 15,
+    marginBottom: 20,
+    borderRadius: 25,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,  // Android 阴影
+    borderWidth: 1,
+    borderColor: "rgba(255, 255, 255, 0.3)",  // 添加微妙的边框
   },
   buttonText: {
     color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold"
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   }
 });
