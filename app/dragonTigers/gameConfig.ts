@@ -4,7 +4,7 @@ const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
 // 计算合适的棋盘大小，取屏幕宽度和高度的较小值的85%
-export const WIDTH = Math.min(screenWidth, screenHeight) * 0.85;
+export const WIDTH = Math.min(screenWidth, screenHeight) * 0.95;
 // 根据棋盘大小和格子数计算单个格子大小
 export const CELL_SIZE = (WIDTH - 40) / 4; // 40是总的边距空间
 
