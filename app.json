@@ -16,7 +16,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.yourcompany.animalchess",
+      "package": "com.yourcompany.dragontigerfight",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
@@ -43,7 +43,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "96245d2a-aab7-4a09-8cf6-8d9d44d191a3"
+        "projectId": "316f21f5-bd83-4686-913b-4206db9b5e53"
       }
     }
   }
