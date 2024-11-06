@@ -1,4 +1,5 @@
 import { ImageSourcePropType } from "react-native";
+import { Audio } from 'expo-av';
 
 export type Animal = {
     id: number;

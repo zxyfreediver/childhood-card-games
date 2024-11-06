@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { Alert } from 'react-native';
 import { GameState, Position, Cell } from './types';
 import { DRAGONS, TIGERS, PLAYER_COLORS } from './gameConfig';
+import { Audio } from 'expo-av';
 
 const getInitialState = (): GameState => ({
   board: initializeBoard(),
@@ -64,12 +65,27 @@ export const useDragonTiger = () => {
     return false;
   }, [gameState.board]);
 
+  const playSound = useCallback(async (animalType: 'dragon' | 'tiger') => {
+    try {
+      const soundFile = animalType === 'dragon' 
+        ? require('@/assets/music/dragon.mp3')
+        : require('@/assets/music/tiger.mp3');
+      const { sound } = await Audio.Sound.createAsync(soundFile);
+      await sound.playAsync();
+    } catch (error) {
+      console.log('Error playing sound:', error);
+    }
+  }, []);
+
   const handleCellPress = useCallback((row: number, col: number) => {
     const { board, currentPlayer, selectedPiece } = gameState;
     const cell = board[row][col];
 
     if (!selectedPiece) {
       if (!cell.isRevealed) {
+        const isAnimalDragon = cell.animal?.type === 'dragon';
+        playSound(isAnimalDragon ? 'dragon' : 'tiger');
+
         const newBoard = [...board];
         newBoard[row][col] = {
           ...cell,
@@ -147,7 +163,7 @@ export const useDragonTiger = () => {
       
       setGameState(prev => ({ ...prev, selectedPiece: null }));
     }
-  }, [gameState, canEat, canMove]);
+  }, [gameState, canEat, canMove, playSound]);
 
   const resetGame = useCallback(() => {
     Alert.alert(
