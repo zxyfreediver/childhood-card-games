@@ -17,10 +17,10 @@
 
 # 游戏截图
 
-<img src="./assets/images/readme/main-screen.jpeg" width="400" alt="游戏主界面"/>
+<img src="./assets/images/readme/main-screen.png" width="200" alt="游戏主界面"/>
 *游戏主界面展示*
 
-<img src="./assets/images/readme/battle-screen.jpeg" width="400" alt="对战场景"/>
+<img src="./assets/images/readme/battle-screen.png" width="200" alt="对战场景"/>
 *玩家对战场景*
 
 
