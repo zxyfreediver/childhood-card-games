@@ -1,50 +1,47 @@
-# Welcome to your Expo app 👋
+# 游戏名称
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 龙虎斗
 
-## Get started
+一款我儿时和小伙伴一起玩的卡牌游戏。同样类型的还有，军师旅团营；刀杀鸡；动物牌 等。
 
-1. Install dependencies
+# 游戏规则
 
+1. 游戏由两名玩家进行，分别控制龙和虎。玩家 1 控制虎，玩家 2 控制龙。
+2. 玩家轮流进行操作，每次可以翻开一张牌或者移动自己的生物。
+3. 吃牌规则：每个生物都有等级，等级压制的规则如下 
+   - 1 > 2 > 3 > 4 > 5 > 6 > 7
+   - 2 > 3 > 4 > 5 > 6 > 7 > 8
+   - 8 > 1
+4. 游戏的目标是吃掉对方所有的生物，或者使对方无法移动。
+5. 游戏结束时，胜利的玩家将被宣布为赢家。
+
+# 游戏截图
+
+![游戏主界面](./assets/images/readme/main-screen.png)
+*游戏主界面展示*
+
+![对战场景](./assets/images/readme/battle-screen.png)
+*玩家对战场景*
+
+
+# 项目启动方法
+
+1. 确保你已经安装了 [Node.js](https://nodejs.org/) 和 [Expo CLI](https://docs.expo.dev/get-started/installation/)。
+2. 克隆这个项目到本地：
    ```bash
-   npm install
+   git clone <项目的Git地址>
    ```
-
-2. Start the app
-
+3. 进入项目目录：
    ```bash
-    npx expo start
+   cd <项目目录>
    ```
+4. 安装依赖：
+   ```bash
+   yarn
+   ```
+5. 启动项目：
+   ```bash
+   yarn start
+   ```
+   这将启动 Expo 开发服务器，并提供一个二维码，你可以使用 Expo Go 应用扫描二维码在手机上运行项目。
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
