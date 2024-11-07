@@ -3,7 +3,7 @@ import { Image, StyleSheet } from 'react-native';
 
 export const CardBack = () => (
   <Image
-    source={require('@/assets/images/card-back.png')}
+    source={require('@/assets/images/card-back.jpeg')}
     style={styles.cardBackImage}
   />
 );

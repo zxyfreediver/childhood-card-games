@@ -23,9 +23,21 @@
 <img src="./assets/images/readme/battle-screen.png" width="200" alt="对战场景"/>
 *玩家对战场景*
 
+# DEMO 演示
+
+## 安卓
+<img src="./assets/images/readme/demo.gif" width="200" alt="游戏演示"/>
+
+## IOS
+无
+
+# 技术栈
+- React Native
+- Expo
+- Typescript
+
 
 # 项目启动方法
-
 1. 确保你已经安装了 [Node.js](https://nodejs.org/) 和 [Expo CLI](https://docs.expo.dev/get-started/installation/)。
 2. 克隆这个项目到本地：
    ```bash
