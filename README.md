@@ -26,7 +26,7 @@
 # DEMO 演示
 
 ## 安卓
-<img src="./assets/images/readme/demo.gif" width="200" alt="游戏演示"/>
+<img src="./assets/images/readme/demo.png" width="200" alt="游戏演示"/>
 
 ## IOS
 无
