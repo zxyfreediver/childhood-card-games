@@ -41,11 +41,11 @@
 1. 确保你已经安装了 [Node.js](https://nodejs.org/) 和 [Expo CLI](https://docs.expo.dev/get-started/installation/)。
 2. 克隆这个项目到本地：
    ```bash
-   git clone <项目的Git地址>
+   git clone https://github.com/zxyfreediver/childhood-card-games.git
    ```
 3. 进入项目目录：
    ```bash
-   cd <项目目录>
+   cd childhood-card-games
    ```
 4. 安装依赖：
    ```bash
